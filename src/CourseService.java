@@ -35,8 +35,14 @@ public class CourseService {
         String id = sc.nextLine();
         System.out.print("Nhap ten: ");
         String name = sc.nextLine();
-        System.out.print("Nhap hoc phi: ");
-        double fee = Double.parseDouble(sc.nextLine());
+        double fee = 0;
+        try {
+            System.out.print("Nhap hoc phi: ");
+            fee = Double.parseDouble(sc.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Loi: Hoc phi phai la so!");
+            return;
+        }
         System.out.print("Nhap cap do (N5-N1): ");
         String level = sc.nextLine();
 
