@@ -5,6 +5,10 @@ import java.util.List;
 public class FileHelper {
     // Luu danh sach doi tuong vao file
     public static <T> void writeToFile(String fileName, List<T> data) {
+        if (data == null) {
+            System.out.println("Du lieu rong, khong ghi file.");
+            return;
+        }
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
             oos.writeObject(data);
             System.out.println("Da luu file: " + fileName);

@@ -20,7 +20,6 @@ public class Main {
             System.out.println("11. Xem danh sach chung chi");
             System.out.println("0. Thoat");
             System.out.print("Chon: ");
-
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1": courseService.addEnglishCourse(); break;
