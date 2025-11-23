@@ -16,8 +16,14 @@ public class StudentService {
         String id = sc.nextLine();
         System.out.print("Nhap Ho ten: ");
         String name = sc.nextLine();
-        System.out.print("Nhap SDT: ");
-        String phone = sc.nextLine();
+        String phone = "";
+        while (true) {
+            System.out.print("Nhap SDT (9-11 so): ");
+            phone = sc.nextLine();
+            if (phone.matches("\\d{9,11}")) break;
+            System.out.println("SDT khong hop le, vui long nhap lai!");
+        }
+        // ... (tiếp tục nhập email)
         System.out.print("Nhap Email: ");
         String email = sc.nextLine();
         System.out.print("Nhap Ma Hoc Vien: ");
