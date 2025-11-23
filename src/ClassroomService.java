@@ -25,7 +25,13 @@ public class ClassroomService {
     }
 
     public void showAllClasses() {
-        if (classes.isEmpty()) System.out.println("Chua co lop hoc nao.");
-        for (Classroom c : classes) c.showInfo();
+        try {
+            if (classes.isEmpty()) {
+                throw new NotFoundException("Danh sach lop trong!");
+            }
+            for (Classroom c : classes) c.showInfo();
+        } catch (NotFoundException e) {
+            System.out.println("Loi: " + e.getMessage());
+        }
     }
 }
