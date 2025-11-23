@@ -18,6 +18,10 @@ public class CourseService {
         String name = sc.nextLine();
         System.out.print("Nhap hoc phi: ");
         double fee = Double.parseDouble(sc.nextLine());
+        if (fee < 0) {
+            System.out.println("Hoc phi khong hop le!");
+            return;
+        }
         System.out.print("Nhap trinh do (TOEIC/IELTS): ");
         String level = sc.nextLine();
 
