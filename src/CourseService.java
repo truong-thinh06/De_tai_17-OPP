@@ -69,4 +69,16 @@ public class CourseService {
             System.out.println("Khong tim thay ID nay.");
         }
     }
+    public void searchCourse() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap ten khoa hoc can tim: ");
+        String keyword = sc.nextLine().toLowerCase();
+
+        System.out.println("--- Ket qua ---");
+        for (Course c : courses) {
+            if (c.getCourseName().toLowerCase().contains(keyword)) {
+                c.showCourseInfo();
+            }
+        }
+    }
 }
