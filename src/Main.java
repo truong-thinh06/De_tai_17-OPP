@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Khoi tao cac Service
         CourseService courseService = new CourseService();
         ClassroomService classService = new ClassroomService();
         ScheduleService scheduleService = new ScheduleService();
@@ -14,7 +12,6 @@ public class Main {
         CertificateService certService = new CertificateService();
         PaymentService paymentService = new PaymentService(); // Moi
         ReportService reportService = new ReportService();    // Moi
-
         while (true) {
             System.out.println("\n=== QUAN LY TRUNG TAM NGOAI NGU ===");
             System.out.println("1. Quan ly KHOA HOC (Them/Xem)");
