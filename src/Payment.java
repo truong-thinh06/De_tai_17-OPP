@@ -11,7 +11,7 @@ public class Payment implements Serializable {
         this.amount = amount;
         this.date = date;
     }
-
+    public double getAmount() { return amount; }
     @Override
     public String toString() {
         return "Hoa don: HV " + studentId + " - " + amount + " VND - Ngay: " + date;

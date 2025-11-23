@@ -6,10 +6,9 @@ public class ReportService {
         List<Payment> payments = FileHelper.readFromFile("payments.dat");
         double total = 0;
         for (Payment p : payments) {
-            // Can them getter getAmount() ben Payment.java neu chua co
-            // O day gia su ban da them hoac tinh dummy
-            // total += p.getAmount();
+            total += p.getAmount();
         }
+        System.out.println("Tong tien: " + total + " VND");
         System.out.println("--- BAO CAO DOANH THU ---");
         System.out.println("Tong so giao dich: " + payments.size());
         // System.out.println("Tong tien: " + total);
