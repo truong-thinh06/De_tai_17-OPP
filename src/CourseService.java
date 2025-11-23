@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CourseService {
     private List<Course> courses = new ArrayList<>();
@@ -55,6 +57,14 @@ public class CourseService {
         if (courses.isEmpty()) {
             System.out.println("Chua co khoa hoc nao.");
         } else {
+            // Logic sap xep A-Z
+            Collections.sort(courses, new Comparator<Course>() {
+                @Override
+                public int compare(Course o1, Course o2) {
+                    return o1.getCourseName().compareTo(o2.getCourseName());
+                }
+            });
+
             for (Course c : courses) {
                 c.showCourseInfo();
             }
@@ -87,4 +97,5 @@ public class CourseService {
             }
         }
     }
+
 }
