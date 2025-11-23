@@ -54,4 +54,19 @@ public class CourseService {
             }
         }
     }
+    public void deleteCourse() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap ID khoa hoc can xoa: ");
+        String id = sc.nextLine();
+
+        // Dung lambda de xoa cho nhanh
+        boolean removed = courses.removeIf(c -> c.getCourseId().equals(id));
+
+        if (removed) {
+            FileHelper.writeToFile(FILE_NAME, courses);
+            System.out.println("Xoa thanh cong!");
+        } else {
+            System.out.println("Khong tim thay ID nay.");
+        }
+    }
 }
