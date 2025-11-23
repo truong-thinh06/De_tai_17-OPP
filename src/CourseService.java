@@ -25,6 +25,21 @@ public class CourseService {
         FileHelper.writeToFile(FILE_NAME, courses);
         System.out.println("Them khoa hoc thanh cong!");
     }
+    public void addJapaneseCourse() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap ID: ");
+        String id = sc.nextLine();
+        System.out.print("Nhap ten: ");
+        String name = sc.nextLine();
+        System.out.print("Nhap hoc phi: ");
+        double fee = Double.parseDouble(sc.nextLine());
+        System.out.print("Nhap cap do (N5-N1): ");
+        String level = sc.nextLine();
+
+        courses.add(new JapaneseCourse(id, name, fee, level));
+        FileHelper.writeToFile(FILE_NAME, courses);
+        System.out.println("Them khoa tieng Nhat thanh cong!");
+    }
 
     public void showAllCourses() {
         if (courses.isEmpty()) {
