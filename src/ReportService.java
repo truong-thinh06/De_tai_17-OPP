@@ -8,7 +8,7 @@ public class ReportService {
         for (Payment p : payments) {
             total += p.getAmount();
         }
-        System.out.println("Tong tien: " + total + " VND");
+        System.out.printf("Tong tien doanh thu: %,.0f VND%n", total);
         System.out.println("--- BAO CAO DOANH THU ---");
         System.out.println("Tong so giao dich: " + payments.size());
         // System.out.println("Tong tien: " + total);
